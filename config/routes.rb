@@ -7,4 +7,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  namespace :v1, module: "apiv1" do
+    get "test" => "test#index"
+    get "test2" => "test#show"
+  end
 end
