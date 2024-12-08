@@ -1,24 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to Install
 
-Things you may want to cover:
+### Pre-requisite
+- Ruby (>= 3.2.0)
+- MySQL
 
-* Ruby version
+### Installation
+1. Clone this repository using SSH
+   ```bash
+   git clone git@github.com:zainafifaldi/good-night-app.git
+   ```
 
-* System dependencies
+2. Copy env.sample file into .env
+   ```bash
+   cp env.sample .env
+   ```
+   Setup database variables based on your local env
 
-* Configuration
+3. Run bundle install to install all gems / dependencies
+   ```bash
+   bundle install
+   ```
 
-* Database creation
+4. Run database migration, and run seeder for dummy user data
+   ```bash
+   rails db:migrate
+   rails db:seed
+   ```
+   *Note: This will also create database if not exist*
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Start the application server
+   ```bash
+   rails server
+   ```
