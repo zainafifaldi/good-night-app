@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  namespace :v1, module: "apiv1" do
+  namespace :v1 do
+    scope "sleep-records", controller: "sleep_record" do
+      post "clock-in", action: "clock_in"
+    end
+
     get "test" => "test#index"
     get "test2" => "test#show"
   end

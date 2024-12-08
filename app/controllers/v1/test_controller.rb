@@ -1,4 +1,4 @@
-class Apiv1::TestController < ApplicationController
+class V1::TestController < ApplicationController
   def index
     user = ::TestService.single_data
 
