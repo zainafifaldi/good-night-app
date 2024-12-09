@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     scope "sleep-records", controller: "sleep_record" do
       post "clock-in", action: "clock_in"
+      post "wake-up", action: "wake_up"
     end
 
     get "test" => "test#index"
