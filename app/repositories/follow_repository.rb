@@ -15,5 +15,9 @@ class FollowRepository < ApplicationRepository
     def get_follower_followee(follower_id, followee_id)
       ::Follow.where(follower_id: follower_id, followee_id: followee_id).first
     end
+
+    def find_by_follower_id(follower_id)
+      ::Follow.where(follower_id: follower_id).all
+    end
   end
 end

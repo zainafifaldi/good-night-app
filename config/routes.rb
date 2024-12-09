@@ -14,9 +14,10 @@ Rails.application.routes.draw do
       post "wake-up", action: "wake_up"
     end
 
-    scope "user-follows", controller: "user_follow" do
+    scope "users/:user_id", controller: "user_follow" do
       post "follow", action: "follow"
       post "unfollow", action: "unfollow"
+      get "following-sleep-records", action: "following_sleep_records"
     end
 
     get "test" => "test#index"
