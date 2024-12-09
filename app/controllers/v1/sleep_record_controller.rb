@@ -1,10 +1,10 @@
 class V1::SleepRecordController < ApplicationController
   def clock_in
-    ::ClockInService.clock_in(clock_in_params)
+    ::SleepRecords::ClockInService.call(clock_in_params)
 
-    sleep_records = ::ClockInService.get_all_clock_in_user(params[:user_id])
+    sleep_records = ::SleepRecords::UserHistoryService.call(params[:user_id])
 
-    render_json sleep_records, ::ClockInSerializer
+    render_json sleep_records, ::SleepRecordSerializer
   rescue => e
     render json: { errors: e }, status: :unprocessable_entity
   end
