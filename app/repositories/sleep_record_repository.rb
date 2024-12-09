@@ -1,9 +1,11 @@
 class SleepRecordRepository < ApplicationRepository
   class << self
     def create(params)
-      if !::SleepRecord.create(params).valid?
+      new_sleep_record = ::SleepRecord.create(params)
+      if !new_sleep_record.valid?
         raise ActiveRecord::RecordInvalid
       end
+      new_sleep_record
     end
 
     def get_last_by_user_id(user_id)
