@@ -1,5 +1,9 @@
 # README
 
+## Notes
+
+Please see this [note](https://github.com/zainafifaldi/good-night-app/blob/main/notes.md) before explore the project.
+
 ## How to Install
 
 ### Pre-requisite
