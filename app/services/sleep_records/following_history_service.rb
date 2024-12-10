@@ -7,18 +7,18 @@ module SleepRecords
     end
 
     def call
-      followings = get_followings
-      get_last_weeks_sleep_records(followings)
+      following_ids = get_following_ids
+      get_last_weeks_sleep_records(following_ids)
     end
 
     private
 
-    def get_followings
-      ::FollowRepository.find_by_follower_id(@user_id)
+    def get_following_ids
+      ::FollowRepository.get_list_following_ids(@user_id)
     end
 
-    def get_last_weeks_sleep_records(followings)
-      ::SleepRecordRepository.find_last_week_by_users_order_by_duration(followings.map(&:followee_id))
+    def get_last_weeks_sleep_records(following_ids)
+      ::SleepRecordRepository.find_last_week_by_users_order_by_duration(following_ids)
     end
   end
 end
