@@ -9,6 +9,10 @@ gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 
+# Redis for memory store (caching)
+# gem "redis-rails"
+gem "redis"
+
 # Use dotenv-rails for environment variables
 gem "dotenv-rails"
 

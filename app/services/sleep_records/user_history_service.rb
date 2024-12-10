@@ -7,7 +7,7 @@ module SleepRecords
     end
 
     def call
-      ::SleepRecordRepository.find_by_user_id(@user_id).to_a
+      ::SleepRecordRepository.find_by_user_id(@user_id)
     end
   end
 end

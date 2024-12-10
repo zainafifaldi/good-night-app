@@ -225,6 +225,10 @@ GEM
     rake (13.2.1)
     rdoc (6.8.1)
       psych (>= 4.0.0)
+    redis (5.3.0)
+      redis-client (>= 0.22.0)
+    redis-client (0.22.2)
+      connection_pool
     regexp_parser (2.9.3)
     reline (0.5.12)
       io-console (~> 0.5)
@@ -326,6 +330,7 @@ DEPENDENCIES
   mysql2
   puma (>= 5.0)
   rails (~> 8.0.0)
+  redis
   rubocop-rails-omakase
   solid_cable
   solid_cache
