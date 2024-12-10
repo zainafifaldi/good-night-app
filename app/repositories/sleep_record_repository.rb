@@ -19,6 +19,15 @@ class SleepRecordRepository < ApplicationRepository
       new_sleep_record
     end
 
+    def update(sleep_record, params)
+      sleep_record.update(params)
+
+      # Invalidate cache user sleep history
+      REDIS.del("#{::SleepRecordRepository::REDIS_KEY_USER_HISTORY}#{sleep_record.user_id}")
+
+      sleep_record
+    end
+
     def get_last_by_user_id(user_id)
       ::SleepRecord.where(user_id: user_id).order(clock_in_time: :desc).first
     end

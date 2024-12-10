@@ -26,7 +26,7 @@ module SleepRecords
     end
 
     def update_sleep_record(sleep_record)
-      sleep_record.update({
+      ::SleepRecordRepository.update(sleep_record, {
         wake_up_time: @sleep_record_params[:wake_up_time],
         total_sleep_time: calculate_total_sleep_time(sleep_record)
       })
